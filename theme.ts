@@ -1,8 +1,10 @@
 import { ThemeConfig, extendTheme } from "@chakra-ui/react";
 import { mode } from '@chakra-ui/theme-tools'
-import { Inter } from 'next/font/google'
+import { Inter, Jost } from 'next/font/google'
+import Button from './styles/button'
 
 const inter = Inter({ subsets: ['latin'] })
+const jost = Jost({ subsets: ['latin'] })
 
 const config: ThemeConfig = {
     initialColorMode: 'system',
@@ -12,6 +14,7 @@ const config: ThemeConfig = {
 const theme = extendTheme({
     config,
     fonts: {
+        heading: jost.style.fontFamily,
         body: inter.style.fontFamily,
     },
     letterSpacings: {
@@ -22,8 +25,13 @@ const theme = extendTheme({
         global: props => ({
             'html, body': {
                 bg: mode('white', 'gray.800')(props),
+            },
+            'h1, h2, h3, h4': {
             }
         }),
+    },
+    components: {
+        Button,
     },
 })
 

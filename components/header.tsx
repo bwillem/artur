@@ -2,9 +2,30 @@ import NextLink from "next/link"
 import Container from "./container"
 import { Box, HStack, Heading, Link, LinkProps, Text, useColorModeValue } from "@chakra-ui/react"
 import Image from "next/image"
+import { useRouter } from "next/router"
 
 function HeaderLink(props: LinkProps) {
-    return <Link fontSize='sm' {...props} />
+    const color = useColorModeValue('gray.400', 'gray.500')
+    const hoverColor = useColorModeValue('black', 'white')
+    const selected = useRouter().pathname === props.href
+
+    return (
+        <Link
+            color={selected ? hoverColor : color}
+            fontSize='xs'
+            fontFamily='heading'
+            borderBottomWidth='1px'
+            borderBottomColor={selected ? hoverColor : 'transparent'}
+            textTransform='uppercase'
+            letterSpacing='widest'
+            _hover={{
+                borderBottomColor: hoverColor,
+                textDecoration: 'none',
+                color: hoverColor,
+            }}
+            {...props}
+        />
+    )
 }
 
 function Header() {
@@ -14,7 +35,7 @@ function Header() {
     return (
         <Box borderBottomWidth='1px'>
             <Container
-                justifyContent='space-around'
+                justifyContent='space-between'
                 alignItems='center'
                 display='flex'
                 py={4}
@@ -25,14 +46,15 @@ function Header() {
                     height='64'
                     width='64' />
                 <Heading
-                    fontSize='sm'
+                    fontSize='md'
                     textTransform='uppercase'
                     letterSpacing='2xl'
+                    fontWeight='light'
                     color={nameColor}
                     as='h1'>
                     Art Gadja{` `}
                     <Text
-                        fontSize='xs'
+                        fontSize='sm'
                         color={cinColor}
                         as='span'>
                         Cinematographer
@@ -42,6 +64,7 @@ function Header() {
                     align='center'
                     justify='space-between'
                     as='nav'
+                    spacing={6}
                 >
                     <HeaderLink href='/work' as={NextLink}>
                         Work
