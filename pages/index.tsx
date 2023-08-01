@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '@/components/header'
-import { Stack, Image as ChakraImage, Box, Button, Heading } from '@chakra-ui/react'
+import { Stack, Image as ChakraImage, Box, Heading } from '@chakra-ui/react'
 import cinematography from '../public/img/art_gadja_cinematography.png'
 import notForProfit from '../public/img/art_gadja_not_for_profit.png'
 import about from '../public/img/art_gadja_about.png'
@@ -54,6 +54,7 @@ export default function Home() {
               as={Image}
               borderRadius={2}
               alt='cinematography'
+              // @ts-ignore
               src={cinematography}
               flexGrow={1}
               zIndex={0}
@@ -69,6 +70,7 @@ export default function Home() {
               as={Image}
               borderRadius={2}
               alt='not for profit'
+              // @ts-ignore
               src={notForProfit} />
             <Link href='/not-for-profit'>
               <Overlay>
@@ -81,6 +83,7 @@ export default function Home() {
               as={Image}
               borderRadius={2}
               alt='about'
+              // @ts-ignore
               src={about} />
             <Link href='/about'>
               <Overlay>
