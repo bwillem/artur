@@ -1,5 +1,5 @@
 import cloudinary from "@/cloudinary"
-import { getBase64ImageUrl } from "@/util"
+import getBase64ImageUrl from "@/util/blurPlaceholder"
 import { Grid, GridItem } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
 
@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
     let i = 0
     for (let image of images) {
         const blurDataUrl = await getBase64ImageUrl(image)
-        images[0].blurDataUrl = blurDataUrl 
+        images[0].blurDataUrl = blurDataUrl
         i++
     }
 

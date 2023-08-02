@@ -30,10 +30,10 @@ const Overlay = props =>
 
 export const H2 = props =>
   <Heading
-    fontSize='md'
     textTransform='uppercase'
     letterSpacing='2xl'
     fontWeight='light'
+    fontSize='md'
     as='h2'
     {...props} />
 
