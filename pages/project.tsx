@@ -3,6 +3,12 @@ import getBase64ImageUrl from "@/util/blurPlaceholder"
 import { Grid, GridItem } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
 
+/**
+ * {project}/{title}
+ */
+
+const folder = 'samples/animals'
+
 function Project({ images }) {
     console.log('Images', images)
 
@@ -15,7 +21,7 @@ function Project({ images }) {
 
 export const getStaticProps: GetStaticProps = async () => {
     const results = await cloudinary.search
-        .expression(`folder:samples/animals`)
+        .expression(`folder:${folder}`)
         .execute()
 
     const images = results.resources

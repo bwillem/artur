@@ -1,23 +1,28 @@
+'use client'
+
 import NextLink from "next/link"
 import Container from "./container"
-import { Box, HStack, Heading, Link, LinkProps, Text, useColorModeValue } from "@chakra-ui/react"
+import { LinkProps, useColorModeValue } from "@chakra-ui/react"
 import Image from "next/image"
-import { useRouter } from "next/router"
+import { usePathname } from "next/navigation"
+import { Link, Box, Heading, HStack, Text } from '@/components/chakra'
 
 function HeaderLink(props: LinkProps) {
-    const color = useColorModeValue('gray.400', 'gray.500')
+    const color = useColorModeValue('gray.500', 'gray.500')
     const hoverColor = useColorModeValue('black', 'white')
-    const selected = useRouter().pathname === props.href
+    const pathname = usePathname()
+    const selected = pathname === props.href
 
     return (
         <Link
-            color={selected ? hoverColor : color}
+            // color={selected ? hoverColor : color}
+            color={color}
             fontSize='xs'
             fontFamily='heading'
             borderBottomWidth='1px'
-            borderBottomColor={selected ? hoverColor : 'transparent'}
+            borderBottomColor={selected ? color : 'transparent'}
             textTransform='uppercase'
-            letterSpacing='widest'
+            letterSpacing='xl'
             _hover={{
                 borderBottomColor: hoverColor,
                 textDecoration: 'none',
@@ -38,15 +43,17 @@ function Header() {
                 justifyContent='space-between'
                 alignItems='center'
                 display='flex'
-                py={4}
+                py={6}
                 as='nav'>
-                <Image
-                    alt='think farm logo'
-                    src='/think-farm.png'
-                    height='64'
-                    width='64' />
+                <NextLink href='/'>
+                    <Image
+                        alt='think farm logo'
+                        src='/think-farm.png'
+                        height='64'
+                        width='64' />
+                </NextLink>
                 <Heading
-                    fontSize='md'
+                    fontSize='lg'
                     textTransform='uppercase'
                     letterSpacing='2xl'
                     fontWeight='light'
@@ -54,6 +61,7 @@ function Header() {
                     as='h1'>
                     Art Gadja{` `}
                     <Text
+                        letterSpacing='xl'
                         fontSize='sm'
                         color={cinColor}
                         as='span'>
@@ -64,7 +72,7 @@ function Header() {
                     align='center'
                     justify='space-between'
                     as='nav'
-                    spacing={6}
+                    spacing={8}
                 >
                     <HeaderLink href='/work' as={NextLink}>
                         Work
