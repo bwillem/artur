@@ -6,7 +6,7 @@ import { decode } from "@/util/strings";
 import RemoteImageLink from "@/components/remoteImageLink";
 import { getImages } from "@/util/fetch";
 
-export const metaData: Metadata = {
+export const metadata: Metadata = {
     title: 'Work'
 }
 
