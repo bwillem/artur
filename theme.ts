@@ -22,9 +22,9 @@ const theme = extendTheme({
         '2xl': '0.4em',
     },
     styles: {
-        global: props => ({
-            'html, body': {
-                bg: mode('white', 'gray.800')(props),
+        global: () => ({
+            body: {
+                minHeight: '100vh',
             },
             'h1, h2, h3, h4': {
             }

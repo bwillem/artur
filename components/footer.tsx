@@ -1,7 +1,7 @@
 'use client'
 import NextLink from "next/link"
 import Container from "./container"
-import { Flex, LinkProps, Stack, useColorModeValue } from "@chakra-ui/react"
+import { LinkProps, Stack, useColorModeValue } from "@chakra-ui/react"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Link, Box, Heading, HStack, Text } from '@/components/chakra'
@@ -33,11 +33,12 @@ function Header() {
     const cinColor = useColorModeValue('gray.400', 'gray.500')
 
     return (
-        <Box borderTopWidth='1px'>
+        <Box
+            borderTopWidth='1px'
+            position='relative'
+            bottom={0}
+        >
             <Container
-                // justifyContent='space-between'
-                // alignItems='center'
-                // display='flex'
                 py={1}>
                 <Stack
                     w='100%'
