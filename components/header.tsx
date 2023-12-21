@@ -77,7 +77,7 @@ function Header() {
                     <HeaderLink href='/work' as={NextLink}>
                         Work
                     </HeaderLink>
-                    <HeaderLink href='/contact' as={NextLink}>
+                    <HeaderLink href='/about' as={NextLink}>
                         Contact
                     </HeaderLink>
                 </HStack>

@@ -9,4 +9,5 @@ export {
     Heading,
     Text,
     Link,
+    Button,
  } from "@chakra-ui/react";

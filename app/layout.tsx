@@ -15,7 +15,7 @@ export default function Layout({ children }) {
             minHeight='100vh'
           >
             <Header />
-            <ContentContainer>
+            <ContentContainer as='main'>
               {children}
             </ContentContainer>
             <Footer />

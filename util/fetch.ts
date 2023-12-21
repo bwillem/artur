@@ -7,6 +7,7 @@ import { cache } from "react";
 export const revalidate = 3600 * 24 // revalidate data at most every day
 
 const isImage = (x: ImageProps) => x.format !== 'mp4'
+const isVideo = (x: ImageProps) => x.format === 'mp4'
 
 /**
  * get list of images by folder 
@@ -17,6 +18,7 @@ export const getImages = (folder: string) => cache(async () => {
         .execute()
 
     const images = results.resources.filter(isImage)
+    const videos = results.resources.filter(isVideo)
 
     let i = 0
 
@@ -26,7 +28,7 @@ export const getImages = (folder: string) => cache(async () => {
         i++
     }
 
-    return images
+    return { images, videos }
 })
 
 /**

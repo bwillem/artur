@@ -81,7 +81,7 @@ function Header() {
                         <FooterLink href='/not-for-profit' as={NextLink}>
                             Not for profit
                         </FooterLink>
-                        <FooterLink href='/contact' as={NextLink}>
+                        <FooterLink href='/about' as={NextLink}>
                             Contact
                         </FooterLink>
                     </HStack>

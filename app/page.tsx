@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Container as='main'>
+      <Container>
         <Stack spacing={4} my={4}>
           <ImageLink
             alt='cinematography'
