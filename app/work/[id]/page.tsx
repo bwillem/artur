@@ -7,7 +7,6 @@ import { getImages } from "@/util/fetch"
 import { decode } from "@/util/strings"
 import 'next-cloudinary/dist/cld-video-player.css';
 
-
 export default async function Work({ params }) {
     const mediaUrl = `work/${params.id}`
     const get = getImages(mediaUrl)

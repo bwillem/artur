@@ -59,7 +59,7 @@ function Header() {
                     fontWeight='light'
                     color={nameColor}
                     as='h1'>
-                    Art Gadja{` `}
+                    Art Gajda{` `}
                     <Text
                         letterSpacing='xl'
                         fontSize='sm'
