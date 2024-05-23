@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ['latin'] })
 const jost = Jost({ subsets: ['latin'] })
 
 const config: ThemeConfig = {
-    initialColorMode: 'system',
-    useSystemColorMode: true,
+    initialColorMode: 'light',
+    useSystemColorMode: false,
 }
 
 const theme = extendTheme({
