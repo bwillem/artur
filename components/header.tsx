@@ -45,13 +45,13 @@ function Header() {
                 display='flex'
                 py={6}
                 as='nav'>
-                <NextLink href='/'>
+                {/* <NextLink href='/'>
                     <Image
                         alt='think farm logo'
                         src='/think-farm.png'
                         height='64'
                         width='64' />
-                </NextLink>
+                </NextLink> */}
                 <Heading
                     fontSize='lg'
                     textTransform='uppercase'
@@ -76,6 +76,12 @@ function Header() {
                 >
                     <HeaderLink href='/work' as={NextLink}>
                         Work
+                    </HeaderLink>
+                    <HeaderLink href='/work' as={NextLink}>
+                        Gear rental
+                    </HeaderLink>
+                    <HeaderLink href='/work' as={NextLink}>
+                        About
                     </HeaderLink>
                     <HeaderLink href='/about' as={NextLink}>
                         Contact

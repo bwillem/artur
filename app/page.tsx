@@ -29,18 +29,18 @@ export default function Home() {
             Cinematography
           </ImageLink>
           <ImageLink
+            alt='rent gear'
+            href='/gear-rental'
+            src={about}
+          >
+            Gear rental
+          </ImageLink>
+          <ImageLink
             alt='not for profit'
             href='/not-for-profit'
             src={notForProfit}
           >
             Not for profit
-          </ImageLink>
-          <ImageLink
-            alt='about'
-            href='/about'
-            src={about}
-          >
-            About
           </ImageLink>
         </Stack>
       </Container>
